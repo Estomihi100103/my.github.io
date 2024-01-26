@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/output.css" />
+    <link rel="icon" href="dist/img/favicon.ico" type="image/x-icon">
+
+    <title>My Portofolio</title>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header Start -->
+    <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
+        <div class="container">
+            <div class="relative flex items-center justify-between">
+                <div class="px-4">
+                    <a href="#home" class="block py-6 text-lg font-bold text-primary">Estomihi</a>
+                </div>
+                <div class="flex items-center px-4">
+                    <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
+                        <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+                        <span class="hamburger-line transition duration-300 ease-in-out"></span>
+                        <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
+                    </button>
+
+                    <nav id="nav-menu"
+                        class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-slate-500 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent">
+                        <ul class="block lg:flex">
+                            <li class="group">
+                                <a href="#home"
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Home
+                                </a>
+                            </li>
+                            <li class="group">
+                                <a href="#portfolio"
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Portofolio</a>
+                            </li>
+                            <li class="group">
+                                <a href="#clients"
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Experience</a>
+                            </li>
+                            <li class="group">
+                                <a href="#organization"
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Organization</a>
+                            </li>
+                            <li class="group">
+                                <a href="#blog"
+                                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Blog</a>
+                            </li>
+                            <li class="mt-3 flex items-center pl-8 lg:mt-0">
+                                <div class="flex">
+                                    <span class="mr-2 text-sm text-slate-500">Light</span>
+                                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                                    <label for="dark-toggle">
+                                        <div
+                                            class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                                            <div
+                                                class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <span class="ml-2 text-sm text-slate-500">Dark</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Start -->
+    <section id="home" class="pt-36 dark:bg-dark">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full self-center px-4 lg:w-1/2">
+                    <h1 class="text-base font-semibold text-primary md:text-xl">Hello Everyone 👋, I am <span
+                            class="mt-1 block text-4xl font-bold text-dark dark:text-white lg:text-5xl">Estomihi
+                            Pangaribuan</span></h1>
+                    <p class="mt-5 mb-10 font-medium leading-relaxed text-secondary">As an undergraduate student in
+                        information systems at Del Institute of Technology, I am highly motivated to learn new things,
+                        especially in software development, Data science and Analyst . I have the ability to work
+                        effectively in a team, so that I can contribute optimally in achieving common goals. In
+                        addition, I am also always ready to learn from experienced individuals, because I believe that
+                        they can provide valuable insights and experiences in improving my abilities. </p>
+
+                    <a href="https://wa.me/6282365632913" target="_blank"
+                        class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">Hubungi
+                        Saya</a>
+                </div>
+                <div class="w-full self-end px-4 lg:w-1/2">
+                    <div class="relative mt-10 lg:right-0 lg:mt-9">
+                        <img src="dist/img/estomihi.png" alt="Sandhika Galih"
+                            class="relative z-10 mx-auto max-w-full" />
+                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
+                            <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#08BDBA"
+                                    d="M54.5,-62C70.8,-51.2,84.4,-34.2,85.1,-17C85.8,0.3,73.6,17.9,61.6,32.5C49.5,47.2,37.6,59,23.4,63.9C9.2,68.9,-7.3,67.1,-21,60.8C-34.7,54.4,-45.7,43.6,-57,30C-68.3,16.4,-79.9,0.1,-77.5,-13.6C-75,-27.4,-58.4,-38.6,-43.1,-49.5C-27.9,-60.5,-13.9,-71.2,2.6,-74.2C19.1,-77.3,38.1,-72.7,54.5,-62Z"
+                                    transform="translate(100 100)" />
+                            </svg>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+
+
+    <!-- Portfolio Section Start -->
+    <section id="portfolio" class="bg-slate-100 pt-36 pb-16 dark:bg-slate-800">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="mx-auto mb-16 max-w-xl text-center">
+                    <h2 class="mb-4 text-3xl font-bold text-primary  sm:text-4xl lg:text-5xl">Project
+                        Terbaru</h2>
+                </div>
+            </div>
+
+            <div class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
+                <div class="mb-12 p-4 md:w-1/2">
+                    <div class="overflow-hidden rounded-md shadow-md">
+                        <img src="dist/img/portfolio/1.png" alt="Landing Page" width="w-full" />
+                    </div>
+                    <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"> <a
+                            href="https://github.com/Estomihi100103/my-portofolio/tree/master" target="_blank">Landing
+                            Page Estomihi</a>
+                        Pangaribuan</h3>
+                    <p class="text-base font-medium text-secondary">This is my personal portfolio website! Discover my
+                        creativity and achievements through the projects I share here.</p>
+                </div>
+                <div class="mb-12 p-4 md:w-1/2">
+                    <div class="overflow-hidden rounded-md shadow-md">
+                        <img src="dist/img/portfolio/2.png" alt="E-Commerce" width="w-full" />
+                    </div>
+                    <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"> <a
+                            href="https://github.com/itdel-ppw/23-04-bebras-hd/tree/BebrasHD" target="_blank">Bebras
+                            Help Desk Application</a>
+                    </h3>
+                    <p class="text-base font-medium text-secondary">A Helpdesk application used by Bebras Indonesia,
+                        teachers and students involved in the Bebras program. This application is designed to facilitate
+                        communication between them, allowing questions and exchange of answers related to understanding
+                        Computational Thinking.</p>
+                </div>
+                <div class="mb-12 p-4 md:w-1/2">
+                    <div class="overflow-hidden rounded-md shadow-md">
+                        <img src="dist/img/portfolio/flow.png" alt="Tribute Page" width="w-full" />
+                    </div>
+                    <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"> <a
+                            href="https://github.com/Estomihi100103/Flowmeteraveryhardoll" target="_blank">
+                            Flowmeteraveryhardoll</a></h3>
+                    <p class="text-base font-medium text-secondary">This is a simple e-commerce Site for the Archipelago
+                        thanks to Teknik. This site is also equipped with admin features, making product management
+                        easier. Currently in development stage. Keep an eye on us for an even better shopping
+                        experience!</p>
+                </div>
+
+                <div class="mb-12 p-4 md:w-1/2">
+                    <div class="overflow-hidden rounded-md shadow-md">
+                        <img src="dist/img/portfolio/5.png" alt="Tribute Page" width="w-full" />
+                    </div>
+                    <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"> <a
+                            href="https://github.com/Estomihi100103/Sistem_Informasi_Students_Enrollement"
+                            target="_blank">Sistem Informasi Students Enrollement</a> </h3>
+                    <p class="text-base font-medium text-secondary">A simple website to make it easier for students to
+                        take courses/KRS in lectures, built with the Laravel framework for an efficient and structured
+                        solution in managing student academic processes.</p>
+                </div>
+                <div class="mb-12 p-4 md:w-1/2">
+                    <div class="overflow-hidden rounded-md shadow-md">
+                        <img src="dist/img/portfolio/3.png" alt="Technical Documentation" width="w-full" />
+                    </div>
+                    <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white"><a
+                            href="https://github.com/Estomihi100103/Used-Car-Price-Predictions"
+                            target="_blank">Used-Car-Price-Predictions</a>
+                    </h3>
+                    <p class="text-base font-medium text-secondary">This project uses various regression models, such as
+                        Linear Regression, RandomForest Regressor, Gradient Boosting Regressor, and XGBoost Regressor,
+                        to predict used car prices. The project dataset is taken from the <a
+                            href="https://www.kaggle.com/datasets/nehalbirla/vehicle-dataset-from-cardekho?select=car+data.csv"
+                            class="text-blue-800">Kaggle</a> platform, utilizing machine learning techniques to develop
+                        an accurate used car price prediction model.</p>
+                </div>
+                <div class="mb-12 p-4 md:w-1/2">
+                    <div class="overflow-hidden rounded-md shadow-md">
+                        <img src="dist/img/portfolio/6.png" alt="Technical Documentation" width="w-full" />
+                    </div><a href="https://github.com/Estomihi100103/Data-Analysis-Exercise" target="_blank">
+                        <h3 class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white">
+                            Data-Analysis-Exercise
+                        </h3>
+                    </a>
+                    <p class="text-base font-medium text-secondary">This is a practice project for data analysis. This
+                        project uses the <a
+                            href="https://github.com/dicodingacademy/dicoding_dataset/tree/main/DicodingCollection"
+                            class="text-blue-800">DicodingCollection dataset</a>. It is the result of a modification of
+                        the <a href="https://www.kaggle.com/datasets/ruchi798/shopping-cart-database"
+                            class="text-blue-800">Shopping Cart Database dataset</a> which is published on the Kaggle
+                        platform</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section End -->
+
+
+
+    <!-- Experience -->
+    <section id="clients" class="bg-white shadow-lg pt-36 pb-32 dark:bg-slate-800">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="mx-auto mb-16 text-center">
+                    <h2 class="mb-4 text-3xl font-bold text-primary sm:text-4xl lg:text-5xl">Experience</h2>
+
+                </div>
+            </div>
+            <div class="flex items-center justify-center">
+                <ul aria-label="Colored activity feed" role="feed"
+                    class="relative flex flex-col gap-12 py-12 pl-8 before:absolute before:top-0 before:left-8 before:h-full before:border before:-translate-x-1/2 before:border-slate-200 before:border-dashed after:absolute after:top-6 after:left-8 after:bottom-6 after:border after:-translate-x-1/2 after:border-slate-200 ">
+
+                    <li role="article" class="relative pl-8 ">
+                        <span
+                            class="absolute left-0 z-10 flex items-center justify-center w-10 h-10 text-white -translate-x-1/2 rounded-full ring-2 ring-white bg-emerald-500 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5" role="presentation">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
+                            </svg>
+                        </span>
+                        <div class="flex flex-col flex-1 gap-0">
+                            <h4 class="text-base font-medium text-slate-700 dark:text-white"> Object-oriented
+                                programming Teaching Assistant</h4>
+                            <p class="text-sm text-slate-500 dark:text-white"> Institut Teknologi Del <span
+                                    class="mx-10 text-xs leading-5 text-sky-500">Jan 2024 - Present</span></p>
+                        </div>
+                    </li>
+                    <li role="article" class="relative pl-8 ">
+                        <span
+                            class="absolute left-0 z-10 flex items-center justify-center w-10 h-10 text-white -translate-x-1/2 rounded-full ring-2 ring-white bg-emerald-500 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5" role="presentation">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
+                            </svg>
+                        </span>
+                        <div class="flex flex-col flex-1 gap-0">
+                            <h4 class="text-base font-medium text-slate-700 dark:text-white">Virtual Internship
+                                Experience by Rakamin Academy at Home Credit Indonesia as a Data Scientist Intern
+                            </h4>
+                            <p class="text-sm text-slate-500 dark:text-white"> Home Credit Indonesia <span
+                                    class="mx-10 text-xs leading-5 text-sky-500">Jan 2024 - Feb 2024</span></p>
+                        </div>
+                    </li>
+                    <li role="article" class="relative pl-8 ">
+                        <span
+                            class="absolute left-0 z-10 flex items-center justify-center w-10 h-10 text-white -translate-x-1/2 rounded-full ring-2 ring-white bg-emerald-500 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5" role="presentation">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
+                            </svg>
+                        </span>
+                        <div class="flex flex-col flex-1 gap-0">
+                            <h4 class="text-base font-medium text-slate-700 dark:text-white"> Visual programming
+                                Teaching Assistant</h4>
+                            <p class="text-sm text-slate-500 dark:text-white"> Institut Teknologi Del <span
+                                    class="mx-10 text-xs leading-5 text-sky-500">Sep 2022 - Dec 2023</span></p>
+                        </div>
+                    </li>
+                    <li role="article" class="relative pl-8 ">
+                        <span
+                            class="absolute left-0 z-10 flex items-center justify-center w-10 h-10 text-white -translate-x-1/2 rounded-full ring-2 ring-white bg-emerald-500 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5" role="presentation">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
+                            </svg>
+                        </span>
+                        <div class="flex flex-col flex-1 gap-0">
+                            <h4 class="text-base font-medium text-slate-700 dark:text-white">Full stack developer Intern
+                            </h4>
+                            <p class="text-sm text-slate-500 dark:text-white"> Gerakan Pandai Bebras Indonesia <span
+                                    class="mx-10 text-xs leading-5 text-sky-500">Jun 2023 – Sep 2023</span></p>
+                        </div>
+                    </li>
+                    <li role="article" class="relative pl-8 ">
+                        <span
+                            class="absolute left-0 z-10 flex items-center justify-center w-10 h-10 text-white -translate-x-1/2 rounded-full ring-2 ring-white bg-emerald-500 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5" role="presentation">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
+                            </svg>
+                        </span>
+                        <div class="flex flex-col flex-1 gap-0">
+                            <h4 class="text-base font-medium text-slate-700 dark:text-white"> Procedural Programming
+                                Teaching Assistant</h4>
+                            <p class="text-sm text-slate-500 dark:text-white"> Institut Teknologi Del <span
+                                    class="mx-10 text-xs leading-5 text-sky-500">Jan 2023 - May 2023</span> </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Experience -->
+
+
+    <!-- Organization Section Start -->
+    <section id="organization" class="bg-slate-100 pt-36 pb-32 dark:bg-dark">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="mx-auto mb-16 max-w-xl text-center">
+                    <h4 class="mb-4 text-3xl font-bold text-primary sm:text-4xl lg:text-5xl">Organization</h4>
+
+                </div>
+            </div>
+            <div class="flex items-end justify-end mr-24">
+                <ul aria-label="Colored activity feed" role="feed"
+                    class="relative flex flex-col gap-12 py-12 pl-8 before:absolute before:top-0 before:left-8 before:h-full before:border before:-translate-x-1/2 before:border-slate-200 before:border-dashed after:absolute after:top-6 after:left-8 after:bottom-6 after:border after:-translate-x-1/2 after:border-slate-200 ">
+
+
+                    <li role="article" class="relative pl-8 ">
+                        <span
+                            class="absolute left-0 z-10 flex items-center justify-center w-10 h-10 text-white -translate-x-1/2 rounded-full ring-2 ring-white bg-emerald-500 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5" role="presentation">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
+                            </svg>
+                        </span>
+                        <div class="flex flex-col flex-1 gap-0">
+                            <h4 class="text-base font-medium text-slate-700 dark:text-white">Member Of Arts Division
+                                HIMSI
+                            </h4>
+                            <p class="text-sm text-slate-500 dark:text-white"> Himpunan Mahasiswa Sistem Informasi
+                                (HIMSI) <span class="mx-10 text-xs leading-5 text-sky-500">May 2022 - Present</span></p>
+                        </div>
+                    </li>
+                    <li role="article" class="relative pl-8 ">
+                        <span
+                            class="absolute left-0 z-10 flex items-center justify-center w-10 h-10 text-white -translate-x-1/2 rounded-full ring-2 ring-white bg-emerald-500 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5" role="presentation">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
+                            </svg>
+                        </span>
+                        <div class="flex flex-col flex-1 gap-0">
+                            <h4 class="text-base font-medium text-slate-700 dark:text-white"> Lead Of DDSC IT Del</h4>
+                            <p class="text-sm text-slate-500 dark:text-white"> Del Data Science Club IT Del (DDSC IT
+                                Del) <span class="mx-10 text-xs leading-5 text-sky-500">Sep 2023 - Present</span></p>
+                        </div>
+                    </li>
+                    <li role="article" class="relative pl-8 ">
+                        <span
+                            class="absolute left-0 z-10 flex items-center justify-center w-10 h-10 text-white -translate-x-1/2 rounded-full ring-2 ring-white bg-emerald-500 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5" role="presentation">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
+                            </svg>
+                        </span>
+                        <div class="flex flex-col flex-1 gap-0">
+                            <h4 class="text-base font-medium text-slate-700 dark:text-white">Member of Gerakan Pandai
+                                Bebras Biro IT Del</h4>
+                            <p class="text-sm text-slate-500 dark:text-white"> Gerakan Pandai Bebras Biro IT Del <span
+                                    class="mx-10 text-xs leading-5 text-sky-500">Sep 2023 - Present</span></p>
+                        </div>
+                    </li>
+                    <li role="article" class="relative pl-8 ">
+                        <span
+                            class="absolute left-0 z-10 flex items-center justify-center w-10 h-10 text-white -translate-x-1/2 rounded-full ring-2 ring-white bg-emerald-500 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5" role="presentation">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
+                            </svg>
+                        </span>
+                        <div class="flex flex-col flex-1 gap-0">
+                            <h4 class="text-base font-medium text-slate-700 dark:text-white"> Student Council (OSIS)
+                                2022, Member of the education division</h4>
+                            <p class="text-sm text-slate-500 dark:text-white"> SMAN 1 LAGUBOTI - <span
+                                    class="mx-10 text-xs leading-5 text-sky-500">Oct 2020 - April 2021
+                                </span> </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+    <!-- Blog Section End -->
+
+    <!-- Blog Section Start -->
+    <section id="blog" class="bg-white-100 pt-36 pb-32 dark:bg-dark">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="mx-auto mb-16 max-w-xl text-center">
+                    <h2 class="mb-4 text-3xl font-bold text-primary sm:text-4xl lg:text-5xl">Blog</h2>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                        <img src="dist/img/portfolio/pemvis.png" alt="Programming" class="w-full" />
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="https://github.com/Estomihi100103/visual-programming-tasks" target="_blank"
+                                    class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Visual
+                                    Programing</a>
+                            </h3>
+                            <p class="mb-6 text-base font-medium text-secondary">This repository provides a series of
+                                weekly programming assignments that apply Flowgorithm software as a means of learning
+                                programming concepts with an intuitive visual approach.</p>
+                            <a href="https://github.com/Estomihi100103/visual-programming-tasks"
+                                class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Explore
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                        <img src="dist/img/portfolio/pempros.PNG" alt="Mechanical Keyboard" class="w-full" />
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="https://github.com/Estomihi100103/procedural-programing-task" target="_blank"
+                                    class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Procedural
+                                    Programing</a>
+                            </h3>
+                            <p class="mb-6 text-base font-medium text-secondary">This repository contains procedural
+                                programming tasks that I did using C language. Hopefully this repository can be a useful
+                                reference and learning resource for colleagues who want to learn more about procedural
+                                programming in C language</p>
+                            <a href="https://github.com/Estomihi100103/procedural-programing-task"
+                                class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Explore
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+                    <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+                        <img src="dist/img/portfolio/pbo.png" alt="Coffee" class="w-full" />
+                        <div class="py-8 px-6">
+                            <h3>
+                                <a href="https://github.com/Estomihi100103/Object-oriented-programming-OOP-task"
+                                    target="_blank"
+                                    class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Object-oriented
+                                    programming</a>
+                            </h3>
+                            <p class="mb-6 text-base font-medium text-secondary">Explore Java OO Tasks: Weekly Code
+                                Showcase Repo! Discover captivating Java code and creative OO implementations. Expand
+                                your understanding and find inspiration in each shared task. Welcome aboard!</p>
+                            <a href="https://github.com/Estomihi100103/Object-oriented-programming-OOP-task"
+                                class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Explore
+                                More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section End -->
+
+
+
+    <!-- Footer Start -->
+    <footer class="bg-dark border-t border-slate-700">
+        <div class="container ">
+            <div class="w-full pt-10">
+                <div class="flex flex-wrap">
+                    <div class="mb-12 w-full px-4 font-medium text-slate-300 md:w-1/3">
+                        <h2 class="mb-5 text-4xl font-bold text-white">Estomihi Pangaribuan</h2>
+                        <h3 class="mb-2 text-2xl font-bold">Hubungi Saya</h3>
+                        <p>estopangaribuan@gmail.com</p>
+                        <p>Laguboti, Toba Samosir</p>
+                        <p>Medan</p>
+                    </div>
+                </div>
+                <div class="mb-5 flex items-center justify-center">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/estomihipgrb/" target="_blank"
+                        class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>Instagram</title>
+                            <path
+                                d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                        </svg>
+                    </a>
+
+                    <a href="https://github.com/Estomihi100103" target="_blank"
+                        class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>GitHub</title>
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.385.6.11.793-.262.793-.577 0-.284-.008-1.04-.012-2.04-3.348.727-4.055-1.613-4.055-1.613C4.46 18.187 3.711 17.8 3.711 17.8c-1.087-.744.083-.728.083-.728 1.205.084 1.838 1.24 1.838 1.24 1.07 1.834 2.805 1.304 3.48.997.108-.777.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.47-2.382 1.236-3.224-.124-.303-.536-1.523.117-3.176 0 0 1.007-.322 3.3 1.23.958-.267 1.98-.4 3-.405 1.02.005 2.042.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.654 1.653.244 2.873.12 3.176.75.842 1.204 1.913 1.204 3.224 0 4.609-2.803 5.625-5.475 5.922.43.372.818 1.102.818 2.222 0 1.605-.014 2.892-.014 3.282 0 .32.193.693.802.575C20.566 21.798 24 17.303 24 12c0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/estomihi/" target="_blank"
+                        class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>LinkedIn</title>
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-center text-xs font-medium text-slate-500 pb-2">
+                    © 2024 estomihi <span class="text-slate-500">dibuat dengan❤️</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Back to top Start -->
+    <a href="#home"
+        class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse"
+        id="to-top">
+        <span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2"></span>
+    </a>
+    <!-- Back to top End -->
+
+    <script src="dist/js/script.js"></script>
+</body>
+
+</html>
