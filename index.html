@@ -7,37 +7,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="dist/output.css" />
         <link rel="icon" href="dist/img/favicon.ico" type="image/x-icon">
-        <script defer
-            src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
         <title>Estomihi Pangaribuan</title>
     </head>
 
     <body>
         <!-- Header Start -->
-        <header x-data="{isOpen:false}" class="bg-transparent dark:bg-dark">
+        <header id="header" class="bg-transparent dark:bg-dark">
             <nav
-                class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 "
+                class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
                 aria-label="Global">
                 <div class="flex lg:flex-1">
                     <a href="#home" class="-m-1.5 p-1.5">
                         <span class="sr-only">My Portofolio</span>
-                        <img class="h-20 w-auto"
-                            src="dist/img/logo.png"
+                        <img class="h-20 w-auto" src="dist/img/logo.png"
                             alt="Estomihi Pangaribuan">
                     </a>
                 </div>
+                <!-- Tombol Menu Mobile -->
                 <div class="flex lg:hidden">
-                    <button type="button" @click="isOpen = !isOpen"
-                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <button type="button" id="menu-toggle"
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-100">
                         <span class="sr-only">Open main menu</span>
                         <svg class="size-6" fill="none" viewBox="0 0 24 24"
                             stroke-width="1.5" stroke="currentColor"
-                            aria-hidden="true" data-slot="icon">
+                            aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
                     </button>
                 </div>
+                <!-- Menu Desktop -->
                 <div class="hidden lg:flex lg:gap-x-12">
                     <a href="#home"
                         class="text-sm/6 font-semibold text-gray-900 dark:text-gray-100">Home</a>
@@ -50,6 +49,7 @@
                     <a href="#blog"
                         class="text-sm/6 font-semibold text-gray-900 dark:text-gray-100">Blog</a>
                 </div>
+                <!-- Dark Mode Toggle -->
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                     <div class="py-6 px-4">
                         <div class="flex items-center">
@@ -64,70 +64,62 @@
                     </div>
                 </div>
             </nav>
-            <!-- Mobile menu, show/hide based on menu open state. -->
-            <div x-show="isOpen" @click.away="isOpen = false" class="lg:hidden"
-                role="dialog" aria-modal="true">
-                <!-- Background backdrop, show/hide based on slide-over state. -->
-                <div class="fixed inset-0 z-20"></div>
-                <div
-                    class="fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                    <div class="flex items-center justify-between">
-                        <a href="#home" class="-m-1.5 p-1.5">
-                            <span class="sr-only">My Portofolio</span>
-                            <img class="h-24 w-auto"
-                                src="dist/img/logo.png"
-                                alt="Estomihi Pangaribuan">
-                        </a>
-                        <button type="button" @click="isOpen = false"
-                            class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                            <span class="sr-only">Close menu</span>
-                            <svg class="size-6" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor"
-                                aria-hidden="true" data-slot="icon">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M6 18 18 6M6 6l12 12" />
-                            </svg>
-                        </button>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="lg:hidden fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 transform transition-transform duration-300 translate-x-full">
+                <div class="flex items-center justify-between">
+                    <a href="#home" class="-m-1.5 p-1.5">
+                        <span class="sr-only">My Portofolio</span>
+                        <img class="h-24 w-auto" src="dist/img/logo.png"
+                            alt="Estomihi Pangaribuan">
+                    </a>
+                    <button type="button" id="menu-close"
+                        class="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800">
+                        <span class="sr-only">Close menu</span>
+                        <svg class="size-6" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-gray-500/10">
+                        <div class="space-y-2 py-6">
+                            <a href="#home"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800">Home</a>
+                            <a href="#portfolio"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800">Portfolio</a>
+                            <a href="#clients"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800">Experience</a>
+                            <a href="#organization"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800">Organization</a>
+                            <a href="#blog"
+                                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800">Blog</a>
+                        </div>
                     </div>
-                    <div class="mt-6 flow-root">
-                        <div class="-my-6 divide-y divide-gray-500/10">
-                            <div class="space-y-2 py-6">
-                                <a href="#home"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
-                                <a href="#portfolio"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Portfolio</a>
-                                <a href="#clients"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Experience</a>
-                                <a href="#organization"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Organization</a>
-                                <a href="#blog"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Blog</a>
-                            </div>
-                            <div class="py-6">
-                                <div class="py-6 px-4">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="mr-2 text-sm text-gray-500 dark:text-gray-400">Light</span>
-                                        <label
-                                            class="relative inline-flex items-center cursor-pointer">
-                                            <input type="checkbox"
-                                                id="dark-toggle2"
-                                                class="sr-only peer">
-                                            <div
-                                                class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                                        </label>
-                                        <span
-                                            class="ml-2 text-sm text-gray-500 dark:text-gray-400">Dark</span>
-                                    </div>
-                                </div>
-                            </div>
+                </div>
+                <div class="py-6">
+                    <div class="py-6 px-4">
+                        <div class="flex items-center">
+                            <span
+                                class="mr-2 text-sm text-gray-500 dark:text-gray-400">Light</span>
+                            <label
+                                class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox"
+                                    id="dark-toggle2"
+                                    class="sr-only peer">
+                                <div
+                                    class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                            </label>
+                            <span
+                                class="ml-2 text-sm text-gray-500 dark:text-gray-400">Dark</span>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-
         <!-- Header End -->
 
         <!-- Hero Section Start -->
@@ -777,6 +769,48 @@
         <!-- Back to top End -->
 
         <script src="dist/js/script.js"></script>
+        <script>
+            //header
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const darkToggle = document.getElementById('dark-toggle');
+    const html = document.documentElement;
+  
+    // Handle menu toggle dengan animasi
+    menuToggle.addEventListener('click', function () {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+    });
+  
+    menuClose.addEventListener('click', function () {
+        mobileMenu.classList.remove('translate-x-0');
+        mobileMenu.classList.add('translate-x-full');
+    });
+  
+    // Handle dark mode toggle
+    darkToggle.addEventListener('change', function () {
+        if (darkToggle.checked) {
+            html.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            html.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+  
+    // Set initial dark mode state
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        darkToggle.checked = true;
+        html.classList.add('dark');
+    } else {
+        darkToggle.checked = false;
+        html.classList.remove('dark');
+    }
+  });
+        </script>
     </body>
 
 </html>

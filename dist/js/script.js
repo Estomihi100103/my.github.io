@@ -94,3 +94,5 @@ darkToggle2.addEventListener('change', function() {
       localStorage.theme = 'light';
   }
 });
+
+
