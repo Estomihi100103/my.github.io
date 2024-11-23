@@ -15,44 +15,82 @@ window.onscroll = function () {
   }
 };
 
-// Hamburger
-const hamburger = document.querySelector('#hamburger');
-const navMenu = document.querySelector('#nav-menu');
 
-hamburger.addEventListener('click', function () {
-  hamburger.classList.toggle('hamburger-active');
-  navMenu.classList.toggle('hidden');
+//Typing Effect
+document.addEventListener("DOMContentLoaded", () => {
+  const typingElement = document.querySelector('.typing-effect');
+  const texts = [
+    "Hello Everyone 👋, I am",
+    "Estomihi Pangaribuan"
+  ]; 
+
+  let textIndex = 0; 
+  let charIndex = 0; 
+
+  const typeText = () => {
+    if (textIndex < texts.length) {
+      if (charIndex < texts[textIndex].length) {
+        typingElement.textContent += texts[textIndex][charIndex]; 
+        charIndex++;
+        setTimeout(typeText, 100); 
+      } else {
+        charIndex = 0; 
+        textIndex++; 
+        if (textIndex < texts.length) {
+          setTimeout(() => {
+            typingElement.textContent += " "; 
+            typeText();
+          }, 500); 
+        }
+      }
+    }
+  };
+
+  typeText();
 });
 
-// Klik di luar hamburger
-window.addEventListener('click', function (e) {
-  if (e.target != hamburger && e.target != navMenu) {
-    hamburger.classList.remove('hamburger-active');
-    navMenu.classList.add('hidden');
-  }
-});
 
-// Darkmode toggle
+
+// Inisialisasi tema dari localStorage atau preferensi sistem
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+} else {
+  document.documentElement.classList.remove('dark');
+}
+
+// Setup dark mode toggle
 const darkToggle = document.querySelector('#dark-toggle');
 const html = document.querySelector('html');
 
-darkToggle.addEventListener('click', function () {
-  console.log('Toggle clicked'); // Tambahkan ini
-  if (darkToggle.checked) {
-    console.log('Dark mode enabled'); // Tambahkan ini
+// Set posisi toggle sesuai tema saat ini
+darkToggle.checked = document.documentElement.classList.contains('dark');
+
+// Event listener untuk toggle
+darkToggle.addEventListener('change', function () {
+  if (this.checked) {
     html.classList.add('dark');
     localStorage.theme = 'dark';
   } else {
-    console.log('Dark mode disabled'); // Tambahkan ini
     html.classList.remove('dark');
     localStorage.theme = 'light';
   }
 });
 
 
-// pindahkan posisi toggle sesuai mode
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-  darkToggle.checked = true;
-} else {
-  darkToggle.checked = false;
-}
+// Setup dark mode toggle
+const darkToggle2 = document.querySelector('#dark-toggle2'); 
+const html2 = document.querySelector('html');
+
+// Set posisi toggle sesuai tema saat ini
+darkToggle2.checked = document.documentElement.classList.contains('dark');
+
+// Event listener untuk toggle
+darkToggle2.addEventListener('change', function() {
+  if (this.checked) {
+      html2.classList.add('dark');
+      localStorage.theme = 'dark';
+  } else {
+      html2.classList.remove('dark');
+      localStorage.theme = 'light';
+  }
+});
